@@ -235,9 +235,9 @@ git config credential.helper <span class="s2">&quot;/path/to/openneuro git-crede
 </div>
 <p>This will configure these options for one repository.</p>
 <p>To enable for all OpenNeuro repositories add this to your <a class="reference external" href="https://git-scm.com/docs/git-config#FILES">git configuration file</a>.</p>
-<div class="highlight-conf notranslate"><div class="highlight"><pre><span></span>[credential &quot;https://openneuro.org&quot;]
-  useHttpPath = true
-  helper = &quot;/path/to/openneuro git-credential&quot;
+<div class="highlight-cfg notranslate"><div class="highlight"><pre><span></span><span class="k">[credential &quot;https://openneuro.org&quot;]</span><span class="w"></span>
+<span class="w">  </span><span class="na">useHttpPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
+<span class="w">  </span><span class="na">helper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/openneuro git-credential&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
