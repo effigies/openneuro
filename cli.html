@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="User Guide" href="user_guide.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Git access to OpenNeuro datasets" href="git.html" /><link rel="prev" title="API Examples" href="api.html" />
 
     <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
-        <title>OpenNeuro documentation</title>
+        <title>OpenNeuro command line interface - OpenNeuro documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">OpenNeuro  documentation</div></a>
+      <a href="index.html"><div class="brand">OpenNeuro  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +144,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="_static/on-dark.svg" alt="Light Logo"/>
@@ -158,10 +158,10 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">OpenNeuro command line interface</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">OpenNeuro command line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git access to OpenNeuro datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maintenance.html">Unpublishing a dataset</a></li>
@@ -199,59 +199,54 @@
           </label>
         </div>
         <article role="main">
-          <section id="openneuro">
-<h1><a class="reference external" href="https://openneuro.org">OpenNeuro</a><a class="headerlink" href="#openneuro" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://codecov.io/gh/OpenNeuroOrg/openneuro"><img alt="CodeCov Coverage Status" src="https://codecov.io/gh/OpenNeuroOrg/openneuro/branch/master/graph/badge.svg" /></a>
-<a class="reference external" href="https://github.com/prettier/prettier"><img alt="styled with prettier" src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg" /></a></p>
-<section id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
-<p>OpenNeuro is a free and open platform for analyzing and sharing neuroimaging data. It is based around the <a class="reference external" href="http://bids.neuroimaging.io/">Brain Imaging Data Structure specification</a>.</p>
+          <section id="openneuro-command-line-interface">
+<h1>OpenNeuro command line interface<a class="headerlink" href="#openneuro-command-line-interface" title="Permalink to this heading">#</a></h1>
+<p>This tool allows you to upload and download <a class="reference external" href="https://openneuro.org">OpenNeuro.org</a> datasets without a browser.</p>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://nodejs.org">Node.js</a> (version 16 or higher)</p></li>
+<li><p>In a terminal type: <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">&#64;openneuro/cli</span></code></p></li>
+</ol>
+<p>If you are using <a class="reference external" href="https://yarnpkg.com/">yarn</a> you can also perform the installation with <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">global</span> <span class="pre">add</span> <span class="pre">&#64;openneuro/cli</span></code>
+(make sure the installation folder is part of your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> by adding <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;$(yarn</span> <span class="pre">global</span> <span class="pre">bin):$PATH&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>)</p>
 </section>
-<section id="development-setup">
-<h2>Development setup<a class="headerlink" href="#development-setup" title="Permalink to this heading">#</a></h2>
-<p>This project is managed with <a class="reference external" href="https://lerna.js.org/">Lerna</a> and <a class="reference external" href="https://yarnpkg.com/">Yarn</a>. To get started, install Yarn and bootstrap the repo.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yarn install
-</pre></div>
-</div>
-<p>You can run tests with <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">test</span></code> at the top level of the project. For each package, <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">test</span> <span class="pre">--watch</span></code> will interactively run the tests for changes since the last commit.</p>
-<p>Before starting up the services, you will need to copy the example <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> file to <code class="docutils literal notranslate"><span class="pre">.env</span></code> and <code class="docutils literal notranslate"><span class="pre">config.env.example</span></code> to <code class="docutils literal notranslate"><span class="pre">config.env</span></code>. Many of the values are optional, and most that aren’t have default values included in their <code class="docutils literal notranslate"><span class="pre">.example</span></code> file. Required values below:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">JWT_SECRET</span></code> in <code class="docutils literal notranslate"><span class="pre">config.env</span></code> must be set to a large random string.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PERSISTENT_DIR</span></code> in <code class="docutils literal notranslate"><span class="pre">.env</span></code> is an absolute path to a directory that will be used to store datasets. This should be a git-annex compatible filesystem and large enough to store some test datasets.</p></li>
-</ul>
-<p>To setup Google as an authentication provider, <a class="reference external" href="https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow">register a new client app</a> and set the following variables. For development use, you will create a new Google project with oauth credentials for a JavaScript client side app. “Authorized JavaScript Origins” is set to <code class="docutils literal notranslate"><span class="pre">http://localhost:9876</span></code> and “Authorized Redirect URIs” is set to <code class="docutils literal notranslate"><span class="pre">http://localhost:9876/crn/auth/google/callback</span></code> for a site accessible at <code class="docutils literal notranslate"><span class="pre">http://localhost:9876</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ending in .apps.googleusercontent.com</span>
-<span class="n">GOOGLE_CLIENT_ID</span><span class="o">=</span>
-<span class="c1"># 24 character secret string</span>
-<span class="n">GOOGLE_CLIENT_SECRET</span><span class="o">=</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="https://docs.docker.com/compose/overview/">docker-compose</a> is used to run a local copy of all required services together.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will run docker-compose in the background (-d flag is --detach)</span>
-docker-compose up -d
-</pre></div>
-</div>
-<p>For example, you can restart the server container with <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">restart</span> <span class="pre">server</span></code> or view logs with <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">logs</span> <span class="pre">-f</span> <span class="pre">--tail=10</span> <span class="pre">server</span></code>.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p>The setup step is needed for both uploading <em>and</em> downloading data from OpenNeuro.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">login</span></code> to configure credentials.
+This prompts you for the required configuration fields and saves this to <code class="docutils literal notranslate"><span class="pre">.openneuro</span></code> in your home directory or profile.
+<code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">login</span></code> will require you to enter an API key.
+You can obtain an API key via a browser at https://openneuro.org/keygen after logging to the OpenNeuro platform via one of the provided authentification services (for example ORCID).</p>
+<p>After successfully running <code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">login</span></code>, you can manually configure custom servers by editing the <code class="docutils literal notranslate"><span class="pre">.openneuro</span></code> file.</p>
 </section>
-<section id="major-components">
-<h2>Major Components<a class="headerlink" href="#major-components" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><span class="xref myst">OpenNeuro app</span> - React frontend</p></li>
-<li><p><span class="xref myst">OpenNeuro server</span> - Node.js GraphQL API</p></li>
-<li><p><span class="xref myst">OpenNeuro indexer</span> - ElasticSearch indexer</p></li>
-<li><p><span class="xref myst">OpenNeuro components</span> - ReactJS components library</p></li>
-<li><p><span class="xref myst">OpenNeuro CLI</span> - Node.js command line tool</p></li>
-<li><p><span class="xref myst">OpenNeuro client</span> - JavaScript client library used in CLI and App</p></li>
-<li><p><a class="reference external" href="https://github.com/OpenNeuroOrg/datalad-service">DataLad service</a> - <a class="reference external" href="http://datalad.org/">DataLad</a> compatible dataset worker microservice</p></li>
-<li><p><a class="reference external" href="https://github.com/bids-standard/bids-validator">bids-validator</a> - BIDS validation library</p></li>
-</ul>
-<p>JavaScript packages are published in the <code class="docutils literal notranslate"><span class="pre">&#64;openneuro</span></code> npm namespace.</p>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
+<section id="uploading-datasets">
+<h3>Uploading datasets<a class="headerlink" href="#uploading-datasets" title="Permalink to this heading">#</a></h3>
+<p>To upload a new dataset:</p>
+<p><code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">upload</span> <span class="pre">&lt;dataset</span> <span class="pre">directory&gt;</span></code></p>
+<p>Your dataset must pass validation to upload but warnings can be skipped with <code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">upload</span> <span class="pre">-i</span> <span class="pre">&lt;dataset</span> <span class="pre">directory&gt;</span></code>. A default label is set using the directory name.</p>
+<p>To resume an interrupted upload or add files to an existing dataset:</p>
+<p><code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">upload</span> <span class="pre">--dataset</span> <span class="pre">&lt;accession</span> <span class="pre">number&gt;</span> <span class="pre">&lt;dataset</span> <span class="pre">directory&gt;</span></code></p>
+<p>where &lt;accession_number&gt; is a unique dataset identifier that can be found in the URL. For example accession number for <code class="docutils literal notranslate"><span class="pre">https://openneuro.org/datasets/ds001555</span></code> is <code class="docutils literal notranslate"><span class="pre">ds001555</span></code>.</p>
+<p>This command will add or replace any files in the dataset but does not delete any files that are only present in the server copy of the dataset.</p>
 </section>
-<section id="openneuro-command-line-utility-tool">
-<h2>OpenNeuro Command-line utility tool<a class="headerlink" href="#openneuro-command-line-utility-tool" title="Permalink to this heading">#</a></h2>
-<p>OpenNeuro supports a <a class="reference external" href="https://docs.openneuro.org/openneuro-packages-openneuro-cli-readme">CLI tool</a> based on <a class="reference external" href="https://nodejs.org/en/">nodejs</a> for uploading and downloading OpenNeuro datasets.</p>
-<div class="toctree-wrapper compound">
-</div>
+<section id="downloading-datasets">
+<h3>Downloading datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this heading">#</a></h3>
+<p>To download a snapshot:</p>
+<p><code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">download</span> <span class="pre">&lt;accession</span> <span class="pre">number&gt;</span> <span class="pre">&lt;destination</span> <span class="pre">directory&gt;</span></code></p>
+<p>To download the current draft files:</p>
+<p><code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">download</span> <span class="pre">--draft</span> <span class="pre">&lt;accession</span> <span class="pre">number&gt;</span> <span class="pre">&lt;destination</span> <span class="pre">directory&gt;</span></code></p>
+<p>If the destination directory does not exist, it will be created. Any files from the dataset that are already present in the directory will be skipped, allowing you to resume an interrupted download.</p>
+</section>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">#</a></h2>
+<p>Package: OpenNeuro CLI download option</p>
+<p>Issue: <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">path</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">or</span> <span class="pre">Buffer</span></code></p>
+<p>Solution: This error is due to a failure to read the <code class="docutils literal notranslate"><span class="pre">~/.openneuro</span></code> configuration file.
+This file can be created with the command <code class="docutils literal notranslate"><span class="pre">openneuro</span> <span class="pre">login</span></code>, see the “Setup” step above.</p>
 </section>
 </section>
 
@@ -260,16 +255,26 @@ docker-compose up -d
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="user_guide.html">
+          <a class="next-page" href="git.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">User Guide</div>
+                <div class="title">Git access to OpenNeuro datasets</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="api.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">API Examples</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -302,11 +307,15 @@ docker-compose up -d
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">OpenNeuro</a><ul>
-<li><a class="reference internal" href="#about">About</a></li>
-<li><a class="reference internal" href="#development-setup">Development setup</a></li>
-<li><a class="reference internal" href="#major-components">Major Components</a></li>
-<li><a class="reference internal" href="#openneuro-command-line-utility-tool">OpenNeuro Command-line utility tool</a></li>
+<li><a class="reference internal" href="#">OpenNeuro command line interface</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#uploading-datasets">Uploading datasets</a></li>
+<li><a class="reference internal" href="#downloading-datasets">Downloading datasets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#errors">Errors</a></li>
 </ul>
 </li>
 </ul>
