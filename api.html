@@ -2,13 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="OpenNeuro command line interface" href="packages/openneuro-cli.html" /><link rel="prev" title="User Guide" href="user_guide.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Git access to OpenNeuro datasets" href="git.html" /><link rel="prev" title="OpenNeuro command line interface" href="packages/openneuro-cli.html" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+    <!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
         <title>API Examples - OpenNeuro documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -153,18 +153,31 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
+  <ul>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenNeuro polices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="policy/data_retention.html">Data Retention Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policy/data_management_plans.html">Data Management Plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="packages/openneuro-cli.html">OpenNeuro command line interface</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git access to OpenNeuro datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer resources</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maintenance.html">Unpublishing a dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/OpenNeuroOrg/openneuro">Source repository (GitHub)</a></li>
 </ul>
 
 </div>
@@ -225,14 +238,14 @@
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;dataset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ds000224&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Midnight Scan Club (MSC) dataset&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dataset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ds000224&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Midnight Scan Club (MSC) dataset&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Root level fields for datasets are either top level metadata (does not belong to any draft or snapshot) or automatically determined from the most recent snapshot (such as the dataset name in this example).</p>
@@ -249,21 +262,128 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;snapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ds000224:1.0.1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Midnight Scan Club (MSC) dataset&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;DatasetDOI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10.18112/openneuro.ds000224.v1.0.1&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;snapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ds000224:1.0.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Midnight Scan Club (MSC) dataset&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DatasetDOI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10.18112/openneuro.ds000224.v1.0.1&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
+<section id="obtain-dataset-file-trees">
+<h3>Obtain dataset file trees<a class="headerlink" href="#obtain-dataset-file-trees" title="Permalink to this heading">#</a></h3>
+<p>File trees are represented as git tree objects. There is a root tree for each version (commit or tag) that can be obtained by requesting the default file listing.</p>
+<div class="highlight-graphql notranslate"><div class="highlight"><pre><span></span><span class="kt">query</span> <span class="k">snapshotFiles</span> <span class="p">{</span>
+  <span class="k">snapshot</span><span class="p">(</span>datasetId: <span class="s2">&quot;ds000001&quot;, tag: &quot;1.0.0&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">files</span> <span class="p">{</span>
+      <span class="k">id</span>
+      <span class="k">key</span>
+      <span class="k">filename</span>
+      <span class="k">size</span>
+      <span class="k">directory</span>
+      <span class="k">annexed</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will return a listing of files at the top level of the dataset.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;snapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;92e695a42470f48ad581ac8dd0894c07ebc4a9b8&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;87b0d1e84b52af82a50100edc269f5c24e4caba5&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CHANGES&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">273</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;annexed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c1905b369e84cbb3016022ebf1ea1574087e20c2&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d8ced4c2adedad6d69c264f94a71df6be20a2241&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;README&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">807</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;annexed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7293821ae8d5c647351cb2a31484162097a442c4&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8f6598628c1e0938397e9a3994ba71416a674f9b&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dataset_description.json&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;annexed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10834f1acb4897eaed5b29fc642718451100721b&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sub-01&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;annexed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, you can see that sub-01 has the <code class="docutils literal notranslate"><span class="pre">&quot;directory&quot;:</span> <span class="pre">true</span></code>. This means the directory <code class="docutils literal notranslate"><span class="pre">id</span></code> field can be used to retrieve additional trees.</p>
+<div class="highlight-graphql notranslate"><div class="highlight"><pre><span></span><span class="kt">query</span> <span class="k">snapshotFiles</span> <span class="p">{</span>
+  <span class="k">snapshot</span><span class="p">(</span>datasetId: <span class="s2">&quot;ds000001&quot;, tag: &quot;1.0.0&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">files</span><span class="p">(</span>tree: <span class="s2">&quot;10834f1acb4897eaed5b29fc642718451100721b&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">id</span>
+      <span class="k">key</span>
+      <span class="k">filename</span>
+      <span class="k">size</span>
+      <span class="k">directory</span>
+      <span class="k">annexed</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will return any files below sub-01 in the tree for this version.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;snapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c63eeb1e0f41fea629f34269025f9d8225a2f3ff&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anat&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;annexed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;309cd8eae8896096c8734b024ac52be4743c9f44&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;func&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;annexed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The full tree can be retrieved by recursively following tree objects.</p>
+</section>
+</section>
+<section id="example-mutations">
+<h2>Example Mutations<a class="headerlink" href="#example-mutations" title="Permalink to this heading">#</a></h2>
 <section id="snapshot-creation">
 <h3>Snapshot Creation<a class="headerlink" href="#snapshot-creation" title="Permalink to this heading">#</a></h3>
 <p>You can create a snapshot of the current draft with a mutation. Each argument provided in the changes array will become a line in the CHANGES file entry for this new snapshot.</p>
@@ -279,6 +399,39 @@
 </pre></div>
 </div>
 </section>
+<section id="deleting-files-folders">
+<h3>Deleting Files/Folders<a class="headerlink" href="#deleting-files-folders" title="Permalink to this heading">#</a></h3>
+<p>You can remove files or folders from the currend draft with the <code class="docutils literal notranslate"><span class="pre">deleteFiles</span></code> mutation. Multiple
+arguments can be provided in the changes array for batch deletion of paths. Paths provided in
+argument are relative to the dataset root, omitting a filename a with <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> will delete the folder
+provided via the path argument. For examples see below:</p>
+<p>To remove a single file specify the path with respect to the dataset root.</p>
+<div class="highlight-graphql notranslate"><div class="highlight"><pre><span></span><span class="kt">mutation</span> <span class="p">{</span>
+  <span class="k">deleteFiles</span><span class="p">(</span>datasetId: <span class="s2">&quot;ds000001&quot;</span>, files: <span class="p">[</span>
+    <span class="p">{</span>path: <span class="s2">&quot;sub-01&quot;, filename: &quot;sub-01_recording-shouldnt-have-made-it-here.json&quot;</span><span class="p">}</span>
+  <span class="p">])</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To remove an entire folder use <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> for the <code class="docutils literal notranslate"><span class="pre">filename</span></code> argument:</p>
+<div class="highlight-graphql notranslate"><div class="highlight"><pre><span></span><span class="kt">mutation</span> <span class="p">{</span>
+  <span class="k">deleteFiles</span><span class="p">(</span>datasetId: <span class="s2">&quot;ds000001&quot;</span>, files: <span class="p">[</span>
+    <span class="p">{</span>path: <span class="s2">&quot;deravitives/freesurfer/sub-01&quot;, filename: &quot;&quot;</span><span class="p">}</span>
+  <span class="p">])</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Likewise, both file and folder deletion could be performed with a single api call via:</p>
+<div class="highlight-graphql notranslate"><div class="highlight"><pre><span></span><span class="kt">mutation</span> <span class="p">{</span>
+  <span class="k">deleteFiles</span><span class="p">(</span>datasetId: <span class="s2">&quot;ds000001&quot;</span>, files: <span class="p">[</span>
+    <span class="p">{</span>path: <span class="s2">&quot;sub-01&quot;, filename: &quot;sub-01_recording-shouldnt-have-made-it-here.json&quot;</span><span class="p">}</span>,
+    <span class="p">{</span>path: <span class="s2">&quot;deravitives/freesurfer/sub-01&quot;, filename: &quot;&quot;</span><span class="p">}</span>
+  <span class="p">])</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Changes will appear in the draft version of the dataset.</p>
+</section>
 </section>
 </section>
 
@@ -287,23 +440,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="packages/openneuro-cli.html">
+          <a class="next-page" href="git.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">OpenNeuro command line interface</div>
+                <div class="title">Git access to OpenNeuro datasets</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="user_guide.html">
+          <a class="prev-page" href="packages/openneuro-cli.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">User Guide</div>
+                <div class="title">OpenNeuro command line interface</div>
                 
               </div>
             </a>
@@ -319,9 +472,7 @@
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -344,7 +495,12 @@
 <li><a class="reference internal" href="#graphql-basics">GraphQL basics</a></li>
 <li><a class="reference internal" href="#example-queries">Example Queries</a><ul>
 <li><a class="reference internal" href="#query-dataset-information">Query dataset information</a></li>
+<li><a class="reference internal" href="#obtain-dataset-file-trees">Obtain dataset file trees</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-mutations">Example Mutations</a><ul>
 <li><a class="reference internal" href="#snapshot-creation">Snapshot Creation</a></li>
+<li><a class="reference internal" href="#deleting-files-folders">Deleting Files/Folders</a></li>
 </ul>
 </li>
 </ul>
@@ -359,9 +515,6 @@
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>

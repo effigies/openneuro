@@ -2,13 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+    <!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
         <title>Infrastructure Monitoring - OpenNeuro documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -153,18 +153,31 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenNeuro polices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="policy/data_retention.html">Data Retention Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policy/data_management_plans.html">Data Management Plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="packages/openneuro-cli.html">OpenNeuro command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git access to OpenNeuro datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer resources</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maintenance.html">Unpublishing a dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/OpenNeuroOrg/openneuro">Source repository (GitHub)</a></li>
 </ul>
 
 </div>
@@ -205,19 +218,19 @@
 <section id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
 <p>A preconfigured secret is required for SMTP credentials.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl --namespace monitoring create secret generic smtp-login --from-file<span class="o">=</span><span class="nv">user</span><span class="o">=</span>smtp-username.txt --from-file<span class="o">=</span><span class="nv">password</span><span class="o">=</span>smtp-password.txt
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>smtp-login<span class="w"> </span>--from-file<span class="o">=</span><span class="nv">user</span><span class="o">=</span>smtp-username.txt<span class="w"> </span>--from-file<span class="o">=</span><span class="nv">password</span><span class="o">=</span>smtp-password.txt
 </pre></div>
 </div>
 <p>These services are deployed with the stable helm charts for Prometheus and Grafana.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm --namespace monitoring install prometheus stable/prometheus
-helm --namespace monitoring install grafana stable/grafana -f helm/grafana.yaml
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span>install<span class="w"> </span>prometheus<span class="w"> </span>stable/prometheus
+helm<span class="w"> </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span>install<span class="w"> </span>grafana<span class="w"> </span>stable/grafana<span class="w"> </span>-f<span class="w"> </span>helm/grafana.yaml
 </pre></div>
 </div>
 </section>
 <section id="upgrades">
 <h2>Upgrades<a class="headerlink" href="#upgrades" title="Permalink to this heading">#</a></h2>
 <p>To apply new configuration or update a service, run helm upgrade.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm --namespace monitoring upgrade grafana stable/grafana -f helm/grafana.yaml
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span>upgrade<span class="w"> </span>grafana<span class="w"> </span>stable/grafana<span class="w"> </span>-f<span class="w"> </span>helm/grafana.yaml
 </pre></div>
 </div>
 </section>
@@ -242,9 +255,7 @@ helm --namespace monitoring install grafana stable/grafana -f helm/grafana.yaml
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -277,9 +288,6 @@ helm --namespace monitoring install grafana stable/grafana -f helm/grafana.yaml
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
