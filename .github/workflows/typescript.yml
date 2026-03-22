@@ -18,6 +18,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
       - run: yarn install
+      - name: Verify codegen is up to date
+        run: |
+          yarn codegen
+          git diff --exit-code packages/openneuro-app/src/gql/
       - run: yarn test --coverage
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v5
