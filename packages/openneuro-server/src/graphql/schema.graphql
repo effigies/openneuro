@@ -2,6 +2,7 @@ scalar Date
 scalar DateTime
 scalar Time
 scalar BigInt
+scalar JSON
 
 enum CacheControlScope {
   PUBLIC
@@ -103,6 +104,18 @@ type Query {
   # All public dataset metadata
   publicMetadata: [Metadata] @cacheControl(maxAge: 86400, scope: PUBLIC)
   orcidConsent: Boolean
+  # Search datasets by query string
+  search(q: String!, after: String, first: Int): DatasetConnection
+  # Advanced search with structured query
+  advancedSearch(
+    query: JSON!
+    allDatasets: Boolean
+    datasetType: String
+    datasetStatus: String
+    sortBy: JSON
+    after: String
+    first: Int
+  ): DatasetConnection
 }
 
 type Mutation {
