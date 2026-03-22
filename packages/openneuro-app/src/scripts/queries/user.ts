@@ -1,10 +1,11 @@
-import { gql, useQuery } from "@apollo/client"
+import { useQuery } from "@apollo/client"
+import { graphql } from "../../gql"
 import { useCookies } from "react-cookie"
 import { getProfile } from "../authentication/profile"
 import * as Sentry from "@sentry/react"
 
 // GraphQL query to fetch detailed user information including nested notifications and event metadata
-export const GET_USER = gql`
+export const GET_USER = graphql(`
   query User($userId: ID!) {
     user(id: $userId) {
       id
@@ -64,13 +65,13 @@ export const GET_USER = gql`
           status
         }
       }
-      orcidConsent 
+      orcidConsent
     }
   }
-`
+`)
 
 // GraphQL mutation to update user data
-export const UPDATE_USER = gql`
+export const UPDATE_USER = graphql(`
   mutation updateUser(
     $id: ID!
     $location: String
@@ -92,9 +93,9 @@ export const UPDATE_USER = gql`
       orcidConsent
     }
   }
-`
+`)
 
-export const ADVANCED_SEARCH_DATASETS_QUERY = gql`
+export const ADVANCED_SEARCH_DATASETS_QUERY = graphql(`
   query advancedSearchDatasets(
     $query: JSON!
     $cursor: String
@@ -207,7 +208,7 @@ export const ADVANCED_SEARCH_DATASETS_QUERY = gql`
       }
     }
   }
-`
+`)
 
 // Reusable hook to fetch user data
 export const useUser = (userId?: string) => {
