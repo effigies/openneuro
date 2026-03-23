@@ -44,7 +44,7 @@ describe("SingleContributorDisplay - Basic Loading", () => {
     vi.mocked(useUser).mockImplementation((userId) => {
       if (userId) {
         return {
-          user: { id: userId, name: `Mock User ${userId}` },
+          user: { id: userId, name: `Mock User ${userId}`, created: new Date().toISOString() },
           loading: false,
           error: undefined,
         }

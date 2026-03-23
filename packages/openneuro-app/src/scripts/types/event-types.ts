@@ -19,7 +19,7 @@ export interface EventDescription {
   message?: string
   reason?: string
   datasetId?: string
-  resolutionStatus?: RequestStatus
+  resolutionStatus?: string
   target?: User
   version?: string
   public?: boolean
@@ -33,7 +33,7 @@ export interface Event {
   timestamp: string
   note?: string
   success?: boolean
-  event: EventDescription
+  event?: EventDescription
   user?: User
   hasBeenRespondedTo?: boolean
   responseStatus?: string
@@ -94,7 +94,7 @@ export const mapRawEventToMappedNotification = (
       title = "is requesting to be added to"
       requesterUser = user // user initiating the request (admin)
       targetUser = target || rawNotification.user // fallback
-      approval = resolutionStatus ?? "pending"
+      approval = (resolutionStatus as RequestStatus) ?? "pending"
       needsReview = approval === "pending"
       break
     case "contributorCitation":
@@ -110,7 +110,7 @@ export const mapRawEventToMappedNotification = (
             email: "",
             orcid: "",
           })
-      approval = resolutionStatus ?? "pending"
+      approval = (resolutionStatus as RequestStatus) ?? "pending"
       needsReview = approval === "pending"
       break
 
@@ -118,14 +118,14 @@ export const mapRawEventToMappedNotification = (
       title = "responded to a contributor request"
       adminUser = user
       targetUser = target
-      approval = resolutionStatus ?? "pending"
+      approval = (resolutionStatus as RequestStatus) ?? "pending"
       break
 
     case "contributorCitationResponse":
       title = "had their citation request for"
       adminUser = user
       targetUser = target
-      approval = resolutionStatus ?? "pending"
+      approval = (resolutionStatus as RequestStatus) ?? "pending"
       break
 
     case "note":

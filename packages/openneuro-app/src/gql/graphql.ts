@@ -165,12 +165,12 @@ export type DatasetEvent = {
   datasetId?: Maybe<Scalars['ID']['output']>;
   event?: Maybe<DatasetEventDescription>;
   hasBeenRespondedTo?: Maybe<Scalars['Boolean']['output']>;
-  id?: Maybe<Scalars['ID']['output']>;
+  id: Scalars['ID']['output'];
   note?: Maybe<Scalars['String']['output']>;
   notificationStatus?: Maybe<UserNotificationStatus>;
   responseStatus?: Maybe<Scalars['String']['output']>;
   success?: Maybe<Scalars['Boolean']['output']>;
-  timestamp?: Maybe<Scalars['DateTime']['output']>;
+  timestamp: Scalars['DateTime']['output'];
   user?: Maybe<User>;
 };
 
@@ -187,7 +187,7 @@ export type DatasetEventDescription = {
   resolutionStatus?: Maybe<Scalars['String']['output']>;
   target?: Maybe<User>;
   targetUserId?: Maybe<Scalars['ID']['output']>;
-  type?: Maybe<Scalars['String']['output']>;
+  type: Scalars['String']['output'];
   version?: Maybe<Scalars['String']['output']>;
 };
 
@@ -1108,7 +1108,7 @@ export type User = {
   email?: Maybe<Scalars['String']['output']>;
   github?: Maybe<Scalars['String']['output']>;
   githubSynced?: Maybe<Scalars['Date']['output']>;
-  id?: Maybe<Scalars['ID']['output']>;
+  id: Scalars['ID']['output'];
   institution?: Maybe<Scalars['String']['output']>;
   lastSeen?: Maybe<Scalars['DateTime']['output']>;
   links?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
@@ -1533,7 +1533,7 @@ export type UpdatePermissionsMutationVariables = Exact<{
 }>;
 
 
-export type UpdatePermissionsMutation = { __typename?: 'Mutation', updatePermissions?: { __typename?: 'DatasetPermissions', id: string, userPermissions?: Array<{ __typename?: 'Permission', datasetId: string, userId: string, level: string, user?: { __typename?: 'User', id?: string | null, email?: string | null, orcid?: string | null, name?: string | null } | null } | null> | null } | null };
+export type UpdatePermissionsMutation = { __typename?: 'Mutation', updatePermissions?: { __typename?: 'DatasetPermissions', id: string, userPermissions?: Array<{ __typename?: 'Permission', datasetId: string, userId: string, level: string, user?: { __typename?: 'User', id: string, email?: string | null, orcid?: string | null, name?: string | null } | null } | null> | null } | null };
 
 export type UpdateOrcidPermissionsMutationVariables = Exact<{
   datasetId: Scalars['ID']['input'];
@@ -1542,7 +1542,7 @@ export type UpdateOrcidPermissionsMutationVariables = Exact<{
 }>;
 
 
-export type UpdateOrcidPermissionsMutation = { __typename?: 'Mutation', updateOrcidPermissions?: { __typename?: 'DatasetPermissions', id: string, userPermissions?: Array<{ __typename?: 'Permission', datasetId: string, userId: string, level: string, user?: { __typename?: 'User', id?: string | null, email?: string | null, orcid?: string | null, name?: string | null } | null } | null> | null } | null };
+export type UpdateOrcidPermissionsMutation = { __typename?: 'Mutation', updateOrcidPermissions?: { __typename?: 'DatasetPermissions', id: string, userPermissions?: Array<{ __typename?: 'Permission', datasetId: string, userId: string, level: string, user?: { __typename?: 'User', id: string, email?: string | null, orcid?: string | null, name?: string | null } | null } | null> | null } | null };
 
 export type FlaggedFilesQueryVariables = Exact<{
   flagged?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1552,7 +1552,7 @@ export type FlaggedFilesQueryVariables = Exact<{
 
 export type FlaggedFilesQuery = { __typename?: 'Query', flaggedFiles?: Array<{ __typename?: 'FlaggedFile', datasetId?: string | null, snapshot?: string | null, filepath?: string | null, flagger?: { __typename?: 'User', name?: string | null, email?: string | null } | null } | null> | null };
 
-export type UserFieldsFragment = { __typename?: 'User', id?: string | null, name?: string | null, admin?: boolean | null, blocked?: boolean | null, email?: string | null, provider?: UserProvider | null, lastSeen?: any | null, created: any, avatar?: string | null, github?: string | null, institution?: string | null, location?: string | null, modified?: any | null, orcid?: string | null } & { ' $fragmentName'?: 'UserFieldsFragment' };
+export type UserFieldsFragment = { __typename?: 'User', id: string, name?: string | null, admin?: boolean | null, blocked?: boolean | null, email?: string | null, provider?: UserProvider | null, lastSeen?: any | null, created: any, avatar?: string | null, github?: string | null, institution?: string | null, location?: string | null, modified?: any | null, orcid?: string | null } & { ' $fragmentName'?: 'UserFieldsFragment' };
 
 export type ParticipantCountQueryVariables = Exact<{
   modality?: InputMaybe<Scalars['String']['input']>;
@@ -1598,7 +1598,7 @@ export type UserQueryVariables = Exact<{
 }>;
 
 
-export type UserQuery = { __typename?: 'Query', user?: { __typename?: 'User', id?: string | null, name?: string | null, orcid?: string | null, email?: string | null, avatar?: string | null, location?: string | null, institution?: string | null, links?: Array<string | null> | null, provider?: UserProvider | null, admin?: boolean | null, created: any, lastSeen?: any | null, blocked?: boolean | null, githubSynced?: any | null, github?: string | null, orcidConsent?: boolean | null, notifications?: Array<{ __typename?: 'DatasetEvent', id?: string | null, timestamp?: any | null, note?: string | null, success?: boolean | null, user?: { __typename?: 'User', id?: string | null, name?: string | null, email?: string | null, orcid?: string | null } | null, event?: { __typename?: 'DatasetEventDescription', type?: string | null, version?: string | null, public?: boolean | null, level?: string | null, ref?: string | null, message?: string | null, requestId?: string | null, targetUserId?: string | null, reason?: string | null, datasetId?: string | null, resolutionStatus?: string | null, target?: { __typename?: 'User', id?: string | null, name?: string | null, email?: string | null, orcid?: string | null } | null, contributorData?: { __typename?: 'Contributor', name: string, givenName?: string | null, familyName?: string | null, orcid?: string | null, contributorType: string, order?: number | null } | null } | null, notificationStatus?: { __typename?: 'UserNotificationStatus', status: NotificationStatusType } | null }> | null } | null };
+export type UserQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: string, name?: string | null, orcid?: string | null, email?: string | null, avatar?: string | null, location?: string | null, institution?: string | null, links?: Array<string | null> | null, provider?: UserProvider | null, admin?: boolean | null, created: any, lastSeen?: any | null, blocked?: boolean | null, githubSynced?: any | null, github?: string | null, orcidConsent?: boolean | null, notifications?: Array<{ __typename?: 'DatasetEvent', id: string, timestamp: any, note?: string | null, success?: boolean | null, user?: { __typename?: 'User', id: string, name?: string | null, email?: string | null, orcid?: string | null } | null, event?: { __typename?: 'DatasetEventDescription', type: string, version?: string | null, public?: boolean | null, level?: string | null, ref?: string | null, message?: string | null, requestId?: string | null, targetUserId?: string | null, reason?: string | null, datasetId?: string | null, resolutionStatus?: string | null, target?: { __typename?: 'User', id: string, name?: string | null, email?: string | null, orcid?: string | null } | null, contributorData?: { __typename?: 'Contributor', name: string, givenName?: string | null, familyName?: string | null, orcid?: string | null, contributorType: string, order?: number | null } | null } | null, notificationStatus?: { __typename?: 'UserNotificationStatus', status: NotificationStatusType } | null }> | null } | null };
 
 export type UpdateUserMutationVariables = Exact<{
   id: Scalars['ID']['input'];
@@ -1609,7 +1609,7 @@ export type UpdateUserMutationVariables = Exact<{
 }>;
 
 
-export type UpdateUserMutation = { __typename?: 'Mutation', updateUser?: { __typename?: 'User', id?: string | null, location?: string | null, links?: Array<string | null> | null, institution?: string | null, orcidConsent?: boolean | null } | null };
+export type UpdateUserMutation = { __typename?: 'Mutation', updateUser?: { __typename?: 'User', id: string, location?: string | null, links?: Array<string | null> | null, institution?: string | null, orcidConsent?: boolean | null } | null };
 
 export type AdvancedSearchDatasetsQueryVariables = Exact<{
   query: Scalars['JSON']['input'];
@@ -1621,7 +1621,7 @@ export type AdvancedSearchDatasetsQueryVariables = Exact<{
 }>;
 
 
-export type AdvancedSearchDatasetsQuery = { __typename?: 'Query', datasets?: { __typename?: 'DatasetConnection', edges?: Array<{ __typename?: 'DatasetEdge', id: string, node: { __typename?: 'Dataset', id: string, created: any, name?: string | null, public?: boolean | null, uploader?: { __typename?: 'User', id?: string | null, name?: string | null, orcid?: string | null } | null, permissions?: { __typename?: 'DatasetPermissions', id: string, userPermissions?: Array<{ __typename?: 'Permission', userId: string, level: string, access: string, user?: { __typename?: 'User', id?: string | null, name?: string | null, email?: string | null, provider?: UserProvider | null } | null } | null> | null } | null, metadata?: { __typename?: 'Metadata', ages?: Array<number | null> | null } | null, latestSnapshot: { __typename?: 'Snapshot', size?: any | null, summary?: { __typename?: 'Summary', modalities?: Array<string | null> | null, secondaryModalities?: Array<string | null> | null, sessions?: Array<string | null> | null, subjects?: Array<string | null> | null, tasks?: Array<string | null> | null, size: any, totalFiles: number, dataProcessed?: boolean | null, primaryModality?: string | null, subjectMetadata?: Array<{ __typename?: 'SubjectMetadata', participantId: string, age?: number | null, sex?: string | null, group?: string | null } | null> | null, pet?: { __typename?: 'SummaryPetFields', BodyPart?: Array<string | null> | null, ScannerManufacturer?: Array<string | null> | null, ScannerManufacturersModelName?: Array<string | null> | null, TracerName?: Array<string | null> | null, TracerRadionuclide?: Array<string | null> | null } | null } | null, issues?: Array<{ __typename?: 'ValidationIssue', severity: Severity } | null> | null, validation?: { __typename?: 'DatasetValidation', errors?: number | null, warnings?: number | null } | null, description?: { __typename?: 'Description', Name: string, Authors?: Array<string | null> | null, DatasetDOI?: string | null } | null }, analytics?: { __typename?: 'Analytic', views?: number | null, downloads?: number | null } | null, stars?: Array<{ __typename?: 'Star', userId?: string | null, datasetId?: string | null } | null> | null, followers?: Array<{ __typename?: 'Follower', userId?: string | null, datasetId?: string | null } | null> | null, snapshots?: Array<{ __typename?: 'Snapshot', id: string, created?: any | null, tag: string } | null> | null } } | null> | null, pageInfo: { __typename?: 'PageInfo', startCursor?: string | null, endCursor?: string | null, hasPreviousPage: boolean, hasNextPage: boolean, count?: number | null } } | null };
+export type AdvancedSearchDatasetsQuery = { __typename?: 'Query', datasets?: { __typename?: 'DatasetConnection', edges?: Array<{ __typename?: 'DatasetEdge', id: string, node: { __typename?: 'Dataset', id: string, created: any, name?: string | null, public?: boolean | null, uploader?: { __typename?: 'User', id: string, name?: string | null, orcid?: string | null } | null, permissions?: { __typename?: 'DatasetPermissions', id: string, userPermissions?: Array<{ __typename?: 'Permission', userId: string, level: string, access: string, user?: { __typename?: 'User', id: string, name?: string | null, email?: string | null, provider?: UserProvider | null } | null } | null> | null } | null, metadata?: { __typename?: 'Metadata', ages?: Array<number | null> | null } | null, latestSnapshot: { __typename?: 'Snapshot', size?: any | null, summary?: { __typename?: 'Summary', modalities?: Array<string | null> | null, secondaryModalities?: Array<string | null> | null, sessions?: Array<string | null> | null, subjects?: Array<string | null> | null, tasks?: Array<string | null> | null, size: any, totalFiles: number, dataProcessed?: boolean | null, primaryModality?: string | null, subjectMetadata?: Array<{ __typename?: 'SubjectMetadata', participantId: string, age?: number | null, sex?: string | null, group?: string | null } | null> | null, pet?: { __typename?: 'SummaryPetFields', BodyPart?: Array<string | null> | null, ScannerManufacturer?: Array<string | null> | null, ScannerManufacturersModelName?: Array<string | null> | null, TracerName?: Array<string | null> | null, TracerRadionuclide?: Array<string | null> | null } | null } | null, issues?: Array<{ __typename?: 'ValidationIssue', severity: Severity } | null> | null, validation?: { __typename?: 'DatasetValidation', errors?: number | null, warnings?: number | null } | null, description?: { __typename?: 'Description', Name: string, Authors?: Array<string | null> | null, DatasetDOI?: string | null } | null }, analytics?: { __typename?: 'Analytic', views?: number | null, downloads?: number | null } | null, stars?: Array<{ __typename?: 'Star', userId?: string | null, datasetId?: string | null } | null> | null, followers?: Array<{ __typename?: 'Follower', userId?: string | null, datasetId?: string | null } | null> | null, snapshots?: Array<{ __typename?: 'Snapshot', id: string, created?: any | null, tag: string } | null> | null } } | null> | null, pageInfo: { __typename?: 'PageInfo', startCursor?: string | null, endCursor?: string | null, hasPreviousPage: boolean, hasNextPage: boolean, count?: number | null } } | null };
 
 export type GetUsersQueryVariables = Exact<{
   orderBy?: InputMaybe<Array<UserSortInput> | UserSortInput>;

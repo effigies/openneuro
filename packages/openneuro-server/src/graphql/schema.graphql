@@ -384,7 +384,7 @@ type PageInfo {
 
 # OpenNeuro user records from all providers
 type User {
-  id: ID
+  id: ID!
   provider: UserProvider
   avatar: String
   orcid: String
@@ -969,7 +969,7 @@ type FlaggedFile {
 }
 
 type DatasetEventDescription {
-  type: String
+  type: String!
   version: String
   public: Boolean
   target: User
@@ -987,9 +987,9 @@ type DatasetEventDescription {
   # Dataset events
 type DatasetEvent {
   # Unique identifier for the event
-  id: ID
+  id: ID!
   # Timestamp of the event
-  timestamp: DateTime
+  timestamp: DateTime!
   # User associated with the event
   user: User
   # Event description object

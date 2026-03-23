@@ -3,11 +3,11 @@ import type { Event, MappedNotification } from "./event-types"
 /** ------------------ User ------------------ */
 export interface User {
   id: string
-  name: string
+  name?: string
   location?: string
   github?: string
   institution?: string
-  email: string
+  email?: string
   avatar?: string
   orcid?: string
   links?: string[]
