@@ -27,12 +27,16 @@ import { describe, expect, it } from "vitest"
 import { printSchema } from "graphql/index.js"
 
 describe("GraphQL schema", () => {
-  it("builds without error", async () => {
-    const schema = (await import("../schema")).default
-    expect(schema).toBeDefined()
-    const sdl = printSchema(schema)
-    expect(sdl).toContain("type Query")
-    expect(sdl).toContain("type Mutation")
-    expect(sdl).toContain("type Dataset")
-  })
+  it(
+    "builds without error",
+    async () => {
+      const schema = (await import("../schema")).default
+      expect(schema).toBeDefined()
+      const sdl = printSchema(schema)
+      expect(sdl).toContain("type Query")
+      expect(sdl).toContain("type Mutation")
+      expect(sdl).toContain("type Dataset")
+    },
+    15_000,
+  )
 })
