@@ -22,7 +22,7 @@ vi.mock("../../config", () => ({
   },
 }))
 
-import { describe, it, expect } from "vitest"
+import { describe, expect, it } from "vitest"
 // Import from the CJS bundle to match the graphql instance Pothos uses internally
 import { printSchema } from "graphql/index.js"
 

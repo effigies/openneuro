@@ -4,13 +4,9 @@ import { UserNotificationStatus } from "./misc"
 import { Contributor } from "./description"
 import { toGraphqlStatus } from "../resolvers/response-status"
 import type { DbStatus } from "../resolvers/response-status"
-import {
-  UserRef,
-  DatasetEventRef,
-  DatasetEventDescriptionRef,
-} from "./refs"
+import { DatasetEventDescriptionRef, DatasetEventRef, UserRef } from "./refs"
 
-export { DatasetEventRef, DatasetEventDescriptionRef }
+export { DatasetEventDescriptionRef, DatasetEventRef }
 
 DatasetEventDescriptionRef.implement({
   fields: (t) => ({

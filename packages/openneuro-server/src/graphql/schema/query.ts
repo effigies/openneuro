@@ -13,12 +13,7 @@ import { publicMetadata as publicMetadataResolver } from "../resolvers/metadata"
 
 // Input type refs
 import { DatasetFilter, DatasetSort, UserSortInput } from "./inputs"
-import {
-  DatasetRef,
-  DatasetConnectionRef,
-  UserRef,
-  SnapshotRef,
-} from "./refs"
+import { DatasetConnectionRef, DatasetRef, SnapshotRef, UserRef } from "./refs"
 import { UserList as UserListRef } from "./user"
 import { FlaggedFile as FlaggedFileRef } from "./misc"
 import { Metadata as MetadataRef } from "./metadata"

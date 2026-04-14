@@ -1,7 +1,7 @@
 import { builder } from "../builder"
 import { user as resolveUser } from "../resolvers/user.js"
 import CommentModel from "../../models/comment"
-import { UserRef, CommentRef } from "./refs"
+import { CommentRef, UserRef } from "./refs"
 
 export { CommentRef }
 

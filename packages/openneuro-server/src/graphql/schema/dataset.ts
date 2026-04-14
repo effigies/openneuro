@@ -21,23 +21,31 @@ import { getDatasetWorker } from "../../libs/datalad-service"
 import { reviewers } from "../resolvers/reviewer"
 import { datasetEvents } from "../resolvers/datasetEvents"
 import {
-  DatasetRef,
-  DatasetEdgeRef,
+  CommentRef,
   DatasetConnectionRef,
+  DatasetEdgeRef,
+  DatasetEventRef,
+  DatasetRef,
   DraftRef,
   SnapshotRef,
   UserRef,
-  CommentRef,
-  DatasetEventRef,
 } from "./refs"
 import { DatasetPermissions as DatasetPermissionsRef } from "./permissions"
 import { Analytic as AnalyticRef } from "./analytics"
-import { Star as StarRef, Follower as FollowerRef, DatasetCommit as DatasetCommitRef } from "./misc"
+import {
+  DatasetCommit as DatasetCommitRef,
+  Follower as FollowerRef,
+  Star as StarRef,
+} from "./misc"
 import { Metadata as MetadataRef } from "./metadata"
 import { DatasetReviewer as DatasetReviewerRef } from "./reviewer"
 import { PageInfo as PageInfoRef } from "./pagination"
 
-export { DatasetRef, DatasetEdgeRef as DatasetEdge, DatasetConnectionRef as DatasetConnection }
+export {
+  DatasetConnectionRef as DatasetConnection,
+  DatasetEdgeRef as DatasetEdge,
+  DatasetRef,
+}
 
 export const DatasetDerivatives = builder.simpleObject("DatasetDerivatives", {
   fields: (t) => ({

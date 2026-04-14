@@ -24,10 +24,7 @@ vi.mock("../src/config", () => ({
 
 import { writeFileSync } from "fs"
 // Import from the CJS bundle to match the graphql instance Pothos uses internally
-import {
-  printSchema,
-  lexicographicSortSchema,
-} from "graphql/index.js"
+import { lexicographicSortSchema, printSchema } from "graphql/index.js"
 import schema from "../src/graphql/schema"
 
 it("dumps schema to SDL", () => {

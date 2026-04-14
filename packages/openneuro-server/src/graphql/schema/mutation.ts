@@ -83,24 +83,19 @@ import {
   ResponseStatusType,
 } from "./enums"
 
-import {
-  DatasetRef,
-  SnapshotRef,
-  UserRef,
-  DatasetEventRef,
-} from "./refs"
-import { Summary as SummaryRef, Metadata as MetadataRef } from "./metadata"
+import { DatasetEventRef, DatasetRef, SnapshotRef, UserRef } from "./refs"
+import { Metadata as MetadataRef, Summary as SummaryRef } from "./metadata"
 import { DatasetPermissions as DatasetPermissionsRef } from "./permissions"
 import {
   Description as DescriptionRef,
   UpdateContributorsPayload as UpdateContributorsPayloadRef,
 } from "./description"
 import {
-  FollowDatasetResponse as FollowDatasetResponseRef,
-  StarDatasetResponse as StarDatasetResponseRef,
   FileCheck as FileCheckRef,
-  UserNotificationStatus as UserNotificationStatusRef,
+  FollowDatasetResponse as FollowDatasetResponseRef,
   RepoMetadata as RepoMetadataRef,
+  StarDatasetResponse as StarDatasetResponseRef,
+  UserNotificationStatus as UserNotificationStatusRef,
 } from "./misc"
 import { UploadMetadata as UploadMetadataRef } from "./upload"
 import { DatasetReviewer as DatasetReviewerRef } from "./reviewer"

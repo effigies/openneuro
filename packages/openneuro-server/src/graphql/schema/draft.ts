@@ -14,15 +14,18 @@ import Summary from "../../models/summary"
 import { DatasetRef, DraftRef } from "./refs"
 import { Summary as SummaryRef } from "./metadata"
 import {
-  ValidationIssue as ValidationIssueRef,
   DatasetValidation as DatasetValidationRef,
+  ValidationIssue as ValidationIssueRef,
 } from "./validation"
 import {
-  ValidationIssueStatus as ValidationIssueStatusRef,
   FileCheck as FileCheckRef,
+  ValidationIssueStatus as ValidationIssueStatusRef,
 } from "./misc"
 import { DatasetFile as DatasetFileRef } from "./files"
-import { Description as DescriptionRef, Contributor as ContributorRef } from "./description"
+import {
+  Contributor as ContributorRef,
+  Description as DescriptionRef,
+} from "./description"
 import { UploadMetadata as UploadMetadataRef } from "./upload"
 
 export { DraftRef }

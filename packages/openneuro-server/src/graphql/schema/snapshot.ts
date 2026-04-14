@@ -8,16 +8,19 @@ import { contributors } from "../../datalad/contributors"
 import { DatasetRef, SnapshotRef } from "./refs"
 import { Summary as SummaryRef } from "./metadata"
 import {
-  ValidationIssue as ValidationIssueRef,
   DatasetValidation as DatasetValidationRef,
+  ValidationIssue as ValidationIssueRef,
 } from "./validation"
 import {
-  ValidationIssueStatus as ValidationIssueStatusRef,
   DeprecatedSnapshot as DeprecatedSnapshotRef,
   RelatedObject as RelatedObjectRef,
+  ValidationIssueStatus as ValidationIssueStatusRef,
 } from "./misc"
 import { DatasetFile as DatasetFileRef } from "./files"
-import { Description as DescriptionRef, Contributor as ContributorRef } from "./description"
+import {
+  Contributor as ContributorRef,
+  Description as DescriptionRef,
+} from "./description"
 import { Analytic as AnalyticRef } from "./analytics"
 
 export { SnapshotRef }

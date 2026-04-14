@@ -1,5 +1,5 @@
 import { builder } from "../builder"
-import { UserRef, PermissionRef } from "./refs"
+import { PermissionRef, UserRef } from "./refs"
 
 export { PermissionRef }
 
