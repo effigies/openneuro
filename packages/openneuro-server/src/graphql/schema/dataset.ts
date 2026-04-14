@@ -20,29 +20,24 @@ import { derivatives } from "../resolvers/derivatives"
 import { getDatasetWorker } from "../../libs/datalad-service"
 import { reviewers } from "../resolvers/reviewer"
 import { datasetEvents } from "../resolvers/datasetEvents"
+import {
+  DatasetRef,
+  DatasetEdgeRef,
+  DatasetConnectionRef,
+  DraftRef,
+  SnapshotRef,
+  UserRef,
+  CommentRef,
+  DatasetEventRef,
+} from "./refs"
+import { DatasetPermissions as DatasetPermissionsRef } from "./permissions"
+import { Analytic as AnalyticRef } from "./analytics"
+import { Star as StarRef, Follower as FollowerRef, DatasetCommit as DatasetCommitRef } from "./misc"
+import { Metadata as MetadataRef } from "./metadata"
+import { DatasetReviewer as DatasetReviewerRef } from "./reviewer"
+import { PageInfo as PageInfoRef } from "./pagination"
 
-// Forward references for types defined in other schema files
-const DraftRef = builder.objectRef<Record<string, unknown>>("Draft")
-const SnapshotRef = builder.objectRef<Record<string, unknown>>("Snapshot")
-const UserRef = builder.objectRef<Record<string, unknown>>("User")
-const DatasetPermissionsRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetPermissions",
-)
-const AnalyticRef = builder.objectRef<Record<string, unknown>>("Analytic")
-const StarRef = builder.objectRef<Record<string, unknown>>("Star")
-const FollowerRef = builder.objectRef<Record<string, unknown>>("Follower")
-const CommentRef = builder.objectRef<Record<string, unknown>>("Comment")
-const MetadataRef = builder.objectRef<Record<string, unknown>>("Metadata")
-const DatasetCommitRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetCommit",
-)
-const DatasetReviewerRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetReviewer",
-)
-const DatasetEventRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetEvent",
-)
-const PageInfoRef = builder.objectRef<Record<string, unknown>>("PageInfo")
+export { DatasetRef, DatasetEdgeRef as DatasetEdge, DatasetConnectionRef as DatasetConnection }
 
 export const DatasetDerivatives = builder.simpleObject("DatasetDerivatives", {
   fields: (t) => ({
@@ -52,8 +47,6 @@ export const DatasetDerivatives = builder.simpleObject("DatasetDerivatives", {
     dataladUrl: t.string(),
   }),
 })
-
-export const DatasetRef = builder.objectRef<Record<string, unknown>>("Dataset")
 
 DatasetRef.implement({
   fields: (t) => ({
@@ -162,11 +155,7 @@ DatasetRef.implement({
   }),
 })
 
-export const DatasetEdge = builder.objectRef<Record<string, unknown>>(
-  "DatasetEdge",
-)
-
-DatasetEdge.implement({
+DatasetEdgeRef.implement({
   fields: (t) => ({
     id: t.string({
       nullable: false,
@@ -184,14 +173,10 @@ DatasetEdge.implement({
   }),
 })
 
-export const DatasetConnection = builder.objectRef<Record<string, unknown>>(
-  "DatasetConnection",
-)
-
-DatasetConnection.implement({
+DatasetConnectionRef.implement({
   fields: (t) => ({
     edges: t.field({
-      type: [DatasetEdge],
+      type: [DatasetEdgeRef],
       resolve: (obj) => obj.edges as Record<string, unknown>[],
     }),
     pageInfo: t.field({

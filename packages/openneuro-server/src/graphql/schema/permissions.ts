@@ -1,9 +1,7 @@
 import { builder } from "../builder"
-import { UserRef } from "./user"
+import { UserRef, PermissionRef } from "./refs"
 
-export const PermissionRef = builder.objectRef<Record<string, unknown>>(
-  "Permission",
-)
+export { PermissionRef }
 
 PermissionRef.implement({
   fields: (t) => ({

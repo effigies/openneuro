@@ -4,12 +4,13 @@ import { UserNotificationStatus } from "./misc"
 import { Contributor } from "./description"
 import { toGraphqlStatus } from "../resolvers/response-status"
 import type { DbStatus } from "../resolvers/response-status"
+import {
+  UserRef,
+  DatasetEventRef,
+  DatasetEventDescriptionRef,
+} from "./refs"
 
-// Forward reference for User type (defined in user.ts)
-const UserRef = builder.objectRef<Record<string, unknown>>("User")
-
-export const DatasetEventDescriptionRef = builder
-  .objectRef<Record<string, unknown>>("DatasetEventDescription")
+export { DatasetEventRef, DatasetEventDescriptionRef }
 
 DatasetEventDescriptionRef.implement({
   fields: (t) => ({
@@ -58,10 +59,6 @@ DatasetEventDescriptionRef.implement({
     }),
   }),
 })
-
-export const DatasetEventRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetEvent",
-)
 
 DatasetEventRef.implement({
   fields: (t) => ({

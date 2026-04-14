@@ -11,27 +11,21 @@ import { fileCheck } from "../resolvers/draft"
 import { contributors } from "../../datalad/contributors"
 import Summary from "../../models/summary"
 
-// Forward references for types defined in other schema files
-const DatasetRef = builder.objectRef<Record<string, unknown>>("Dataset")
-const SummaryRef = builder.objectRef<Record<string, unknown>>("Summary")
-const ValidationIssueRef = builder.objectRef<Record<string, unknown>>(
-  "ValidationIssue",
-)
-const ValidationIssueStatusRef = builder.objectRef<Record<string, unknown>>(
-  "ValidationIssueStatus",
-)
-const DatasetValidationRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetValidation",
-)
-const DatasetFileRef = builder.objectRef<Record<string, unknown>>("DatasetFile")
-const DescriptionRef = builder.objectRef<Record<string, unknown>>("Description")
-const UploadMetadataRef = builder.objectRef<Record<string, unknown>>(
-  "UploadMetadata",
-)
-const FileCheckRef = builder.objectRef<Record<string, unknown>>("FileCheck")
-const ContributorRef = builder.objectRef<Record<string, unknown>>("Contributor")
+import { DatasetRef, DraftRef } from "./refs"
+import { Summary as SummaryRef } from "./metadata"
+import {
+  ValidationIssue as ValidationIssueRef,
+  DatasetValidation as DatasetValidationRef,
+} from "./validation"
+import {
+  ValidationIssueStatus as ValidationIssueStatusRef,
+  FileCheck as FileCheckRef,
+} from "./misc"
+import { DatasetFile as DatasetFileRef } from "./files"
+import { Description as DescriptionRef, Contributor as ContributorRef } from "./description"
+import { UploadMetadata as UploadMetadataRef } from "./upload"
 
-export const DraftRef = builder.objectRef<Record<string, unknown>>("Draft")
+export { DraftRef }
 
 DraftRef.implement({
   fields: (t) => ({

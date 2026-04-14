@@ -1,11 +1,9 @@
 import { builder } from "../builder"
 import { user as resolveUser } from "../resolvers/user.js"
 import CommentModel from "../../models/comment"
+import { UserRef, CommentRef } from "./refs"
 
-// Forward reference for User type (defined in user.ts)
-const UserRef = builder.objectRef<Record<string, unknown>>("User")
-
-export const CommentRef = builder.objectRef<Record<string, unknown>>("Comment")
+export { CommentRef }
 
 CommentRef.implement({
   fields: (t) => ({

@@ -13,17 +13,15 @@ import { publicMetadata as publicMetadataResolver } from "../resolvers/metadata"
 
 // Input type refs
 import { DatasetFilter, DatasetSort, UserSortInput } from "./inputs"
-
-// Forward references for return types defined in other schema files
-const DatasetRef = builder.objectRef<Record<string, unknown>>("Dataset")
-const DatasetConnectionRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetConnection",
-)
-const UserRef = builder.objectRef<Record<string, unknown>>("User")
-const UserListRef = builder.objectRef<Record<string, unknown>>("UserList")
-const SnapshotRef = builder.objectRef<Record<string, unknown>>("Snapshot")
-const FlaggedFileRef = builder.objectRef<Record<string, unknown>>("FlaggedFile")
-const MetadataRef = builder.objectRef<Record<string, unknown>>("Metadata")
+import {
+  DatasetRef,
+  DatasetConnectionRef,
+  UserRef,
+  SnapshotRef,
+} from "./refs"
+import { UserList as UserListRef } from "./user"
+import { FlaggedFile as FlaggedFileRef } from "./misc"
+import { Metadata as MetadataRef } from "./metadata"
 
 builder.queryType({
   fields: (t) => ({

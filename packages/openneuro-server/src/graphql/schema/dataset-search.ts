@@ -7,10 +7,7 @@ import Subscription from "../../models/subscription"
 import Permission from "../../models/permission"
 import { hashObject } from "../../libs/authentication/crypto"
 
-// Forward references for types defined in other schema files
-const DatasetConnectionRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetConnection",
-)
+import { DatasetConnectionRef } from "./refs"
 
 const elasticIndex = "datasets"
 

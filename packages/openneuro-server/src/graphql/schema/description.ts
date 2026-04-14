@@ -1,7 +1,5 @@
 import { builder } from "../builder"
-
-// Forward reference for Dataset type (defined in a later schema file)
-const DatasetRef = builder.objectRef<Record<string, unknown>>("Dataset")
+import { DatasetRef } from "./refs"
 
 export const Description = builder.simpleObject("Description", {
   directives: { cacheControl: { maxAge: 30, scope: "PUBLIC" } },

@@ -83,42 +83,28 @@ import {
   ResponseStatusType,
 } from "./enums"
 
-// Forward references for return types defined in other schema files
-const DatasetRef = builder.objectRef<Record<string, unknown>>("Dataset")
-const SnapshotRef = builder.objectRef<Record<string, unknown>>("Snapshot")
-const SummaryRef = builder.objectRef<Record<string, unknown>>("Summary")
-const DatasetPermissionsRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetPermissions",
-)
-const UserRef = builder.objectRef<Record<string, unknown>>("User")
-const DescriptionRef = builder.objectRef<Record<string, unknown>>("Description")
-const FollowDatasetResponseRef = builder.objectRef<Record<string, unknown>>(
-  "FollowDatasetResponse",
-)
-const StarDatasetResponseRef = builder.objectRef<Record<string, unknown>>(
-  "StarDatasetResponse",
-)
-const MetadataRef = builder.objectRef<Record<string, unknown>>("Metadata")
-const UploadMetadataRef = builder.objectRef<Record<string, unknown>>(
-  "UploadMetadata",
-)
-const RepoMetadataRef = builder.objectRef<Record<string, unknown>>(
-  "RepoMetadata",
-)
-const DatasetReviewerRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetReviewer",
-)
-const DatasetEventRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetEvent",
-)
-const FileCheckRef = builder.objectRef<Record<string, unknown>>("FileCheck")
-const UserNotificationStatusRef = builder.objectRef<Record<string, unknown>>(
-  "UserNotificationStatus",
-)
-const UpdateContributorsPayloadRef = builder.objectRef<Record<string, unknown>>(
-  "UpdateContributorsPayload",
-)
-const WorkerTaskRef = builder.objectRef<Record<string, unknown>>("WorkerTask")
+import {
+  DatasetRef,
+  SnapshotRef,
+  UserRef,
+  DatasetEventRef,
+} from "./refs"
+import { Summary as SummaryRef, Metadata as MetadataRef } from "./metadata"
+import { DatasetPermissions as DatasetPermissionsRef } from "./permissions"
+import {
+  Description as DescriptionRef,
+  UpdateContributorsPayload as UpdateContributorsPayloadRef,
+} from "./description"
+import {
+  FollowDatasetResponse as FollowDatasetResponseRef,
+  StarDatasetResponse as StarDatasetResponseRef,
+  FileCheck as FileCheckRef,
+  UserNotificationStatus as UserNotificationStatusRef,
+  RepoMetadata as RepoMetadataRef,
+} from "./misc"
+import { UploadMetadata as UploadMetadataRef } from "./upload"
+import { DatasetReviewer as DatasetReviewerRef } from "./reviewer"
+import { WorkerTask as WorkerTaskRef } from "./worker"
 
 builder.mutationType({
   fields: (t) => ({

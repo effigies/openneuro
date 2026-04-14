@@ -4,13 +4,9 @@ import { UserProvider } from "./enums"
 import User from "../../models/user"
 import DatasetEvent from "../../models/datasetEvents"
 import type { UserNotificationStatusDocument } from "../../models/userNotificationStatus"
+import { UserRef, DatasetEventRef } from "./refs"
 
-// Forward reference for DatasetEvent type (defined in a later schema file)
-const DatasetEventRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetEvent",
-)
-
-export const UserRef = builder.objectRef<Record<string, unknown>>("User")
+export { UserRef }
 
 UserRef.implement({
   fields: (t) => ({

@@ -5,32 +5,22 @@ import { snapshotValidation } from "../resolvers/validation"
 import { onBrainlife } from "../resolvers/brainlife"
 import { contributors } from "../../datalad/contributors"
 
-// Forward references for types defined in other schema files
-const DatasetRef = builder.objectRef<Record<string, unknown>>("Dataset")
-const SummaryRef = builder.objectRef<Record<string, unknown>>("Summary")
-const ValidationIssueRef = builder.objectRef<Record<string, unknown>>(
-  "ValidationIssue",
-)
-const ValidationIssueStatusRef = builder.objectRef<Record<string, unknown>>(
-  "ValidationIssueStatus",
-)
-const DatasetValidationRef = builder.objectRef<Record<string, unknown>>(
-  "DatasetValidation",
-)
-const DatasetFileRef = builder.objectRef<Record<string, unknown>>("DatasetFile")
-const DescriptionRef = builder.objectRef<Record<string, unknown>>("Description")
-const AnalyticRef = builder.objectRef<Record<string, unknown>>("Analytic")
-const DeprecatedSnapshotRef = builder.objectRef<Record<string, unknown>>(
-  "DeprecatedSnapshot",
-)
-const RelatedObjectRef = builder.objectRef<Record<string, unknown>>(
-  "RelatedObject",
-)
-const ContributorRef = builder.objectRef<Record<string, unknown>>("Contributor")
+import { DatasetRef, SnapshotRef } from "./refs"
+import { Summary as SummaryRef } from "./metadata"
+import {
+  ValidationIssue as ValidationIssueRef,
+  DatasetValidation as DatasetValidationRef,
+} from "./validation"
+import {
+  ValidationIssueStatus as ValidationIssueStatusRef,
+  DeprecatedSnapshot as DeprecatedSnapshotRef,
+  RelatedObject as RelatedObjectRef,
+} from "./misc"
+import { DatasetFile as DatasetFileRef } from "./files"
+import { Description as DescriptionRef, Contributor as ContributorRef } from "./description"
+import { Analytic as AnalyticRef } from "./analytics"
 
-export const SnapshotRef = builder.objectRef<Record<string, unknown>>(
-  "Snapshot",
-)
+export { SnapshotRef }
 
 SnapshotRef.implement({
   directives: { cacheControl: { maxAge: 3600, scope: "PUBLIC" } },
