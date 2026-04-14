@@ -94,6 +94,7 @@ builder.queryType({
 
     flaggedFiles: t.field({
       type: [FlaggedFileRef],
+      nullable: { list: true, items: true },
       args: {
         flagged: t.arg.boolean({ defaultValue: true }),
         deleted: t.arg.boolean({ defaultValue: false }),
@@ -104,6 +105,7 @@ builder.queryType({
 
     publicMetadata: t.field({
       type: [MetadataRef],
+      nullable: { list: true, items: true },
       directives: { cacheControl: { maxAge: 86400, scope: "PUBLIC" } },
       resolve: (root) => publicMetadataResolver(root),
     }),

@@ -189,7 +189,10 @@ builder.mutationType({
     deleteFiles: t.boolean({
       args: {
         datasetId: t.arg.id({ required: true }),
-        files: t.arg({ type: [DeleteFile] }),
+        files: t.arg({
+          type: [DeleteFile],
+          required: { list: false, items: false },
+        }),
       },
       resolve: (root, args, context) =>
         deleteFiles(
@@ -297,7 +300,7 @@ builder.mutationType({
         id: t.arg.id({ required: true }),
         location: t.arg.string(),
         institution: t.arg.string(),
-        links: t.arg.stringList(),
+        links: t.arg.stringList({ required: { list: false, items: false } }),
         orcidConsent: t.arg.boolean(),
       },
       resolve: (root, args, context) =>
@@ -375,7 +378,7 @@ builder.mutationType({
       args: {
         datasetId: t.arg.id({ required: true }),
         field: t.arg.string({ required: true }),
-        value: t.arg.stringList({ required: true }),
+        value: t.arg.stringList(),
       },
       resolve: (root, args, context) =>
         updateDescriptionList(
@@ -434,6 +437,7 @@ builder.mutationType({
     }),
 
     deleteComment: t.stringList({
+      nullable: { list: true, items: true },
       args: {
         commentId: t.arg.id({ required: true }),
         deleteChildren: t.arg.boolean(),

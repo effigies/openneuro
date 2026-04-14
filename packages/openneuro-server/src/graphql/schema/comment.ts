@@ -34,6 +34,7 @@ CommentRef.implement({
     }),
     replies: t.field({
       type: [CommentRef],
+      nullable: { list: true, items: true },
       resolve: (obj) =>
         CommentModel.find({ parentId: obj._id ?? obj.id }).exec(),
     }),

@@ -88,6 +88,7 @@ DatasetRef.implement({
     }),
     snapshots: t.field({
       type: [SnapshotRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => snapshots(obj),
     }),
     latestSnapshot: t.field({
@@ -105,10 +106,12 @@ DatasetRef.implement({
     }),
     stars: t.field({
       type: [StarRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => stars(obj),
     }),
     followers: t.field({
       type: [FollowerRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => followers(obj),
     }),
     name: t.string({
@@ -116,6 +119,7 @@ DatasetRef.implement({
     }),
     comments: t.field({
       type: [CommentRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => datasetComments(obj),
     }),
     following: t.boolean({
@@ -134,6 +138,7 @@ DatasetRef.implement({
     }),
     derivatives: t.field({
       type: [DatasetDerivatives],
+      nullable: { list: true, items: true },
       directives: { cacheControl: { maxAge: 3600, scope: "PUBLIC" } },
       resolve: (obj) => derivatives(obj as { id: string }),
     }),
@@ -143,6 +148,7 @@ DatasetRef.implement({
     }),
     history: t.field({
       type: [DatasetCommitRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => history(obj),
     }),
     worker: t.string({
@@ -150,6 +156,7 @@ DatasetRef.implement({
     }),
     reviewers: t.field({
       type: [DatasetReviewerRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => reviewers(obj),
     }),
     brainInitiative: t.boolean({
@@ -158,6 +165,7 @@ DatasetRef.implement({
     }),
     events: t.field({
       type: [DatasetEventRef],
+      nullable: { list: true, items: true },
       resolve: (obj, _args, context) => datasetEvents(obj, undefined, context),
     }),
   }),
@@ -185,6 +193,7 @@ DatasetConnectionRef.implement({
   fields: (t) => ({
     edges: t.field({
       type: [DatasetEdgeRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => obj.edges as Record<string, unknown>[],
     }),
     pageInfo: t.field({

@@ -3,11 +3,17 @@ import { ValidatorMetadata } from "./misc"
 
 export const SummaryPetFields = builder.simpleObject("SummaryPetFields", {
   fields: (t) => ({
-    BodyPart: t.stringList(),
-    ScannerManufacturer: t.stringList(),
-    ScannerManufacturersModelName: t.stringList(),
-    TracerName: t.stringList(),
-    TracerRadionuclide: t.stringList(),
+    BodyPart: t.stringList({ nullable: { list: true, items: true } }),
+    ScannerManufacturer: t.stringList({
+      nullable: { list: true, items: true },
+    }),
+    ScannerManufacturersModelName: t.stringList({
+      nullable: { list: true, items: true },
+    }),
+    TracerName: t.stringList({ nullable: { list: true, items: true } }),
+    TracerRadionuclide: t.stringList({
+      nullable: { list: true, items: true },
+    }),
   }),
 })
 
@@ -23,13 +29,18 @@ export const SubjectMetadata = builder.simpleObject("SubjectMetadata", {
 export const Summary = builder.simpleObject("Summary", {
   fields: (t) => ({
     id: t.id({ nullable: false }),
-    modalities: t.stringList(),
+    modalities: t.stringList({ nullable: { list: true, items: true } }),
     primaryModality: t.string(),
-    secondaryModalities: t.stringList(),
-    sessions: t.stringList(),
-    subjects: t.stringList(),
-    subjectMetadata: t.field({ type: [SubjectMetadata] }),
-    tasks: t.stringList(),
+    secondaryModalities: t.stringList({
+      nullable: { list: true, items: true },
+    }),
+    sessions: t.stringList({ nullable: { list: true, items: true } }),
+    subjects: t.stringList({ nullable: { list: true, items: true } }),
+    subjectMetadata: t.field({
+      type: [SubjectMetadata],
+      nullable: { list: true, items: true },
+    }),
+    tasks: t.stringList({ nullable: { list: true, items: true } }),
     size: t.field({ type: "BigInt", nullable: false }),
     totalFiles: t.int({ nullable: false }),
     dataProcessed: t.boolean(),
@@ -47,7 +58,7 @@ export const Metadata = builder.simpleObject("Metadata", {
     firstSnapshotCreatedAt: t.field({ type: "DateTime" }),
     latestSnapshotCreatedAt: t.field({ type: "DateTime" }),
     dxStatus: t.string(),
-    tasksCompleted: t.stringList(),
+    tasksCompleted: t.stringList({ nullable: { list: true, items: true } }),
     trialCount: t.int(),
     studyDesign: t.string(),
     studyDomain: t.string(),
@@ -57,9 +68,9 @@ export const Metadata = builder.simpleObject("Metadata", {
     associatedPaperDOI: t.string(),
     openneuroPaperDOI: t.string(),
     seniorAuthor: t.string(),
-    adminUsers: t.stringList(),
-    ages: t.floatList(),
-    modalities: t.stringList(),
+    adminUsers: t.stringList({ nullable: { list: true, items: true } }),
+    ages: t.floatList({ nullable: { list: true, items: true } }),
+    modalities: t.stringList({ nullable: { list: true, items: true } }),
     grantFunderName: t.string(),
     grantIdentifier: t.string(),
     affirmedDefaced: t.boolean(),

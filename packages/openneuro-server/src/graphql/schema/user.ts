@@ -62,6 +62,7 @@ UserRef.implement({
       resolve: (obj) => obj.githubSynced as string,
     }),
     links: t.stringList({
+      nullable: { list: true, items: true },
       resolve: (obj) => obj.links as string[],
     }),
     notifications: t.field({

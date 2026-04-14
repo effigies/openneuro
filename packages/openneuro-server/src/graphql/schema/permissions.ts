@@ -27,6 +27,9 @@ PermissionRef.implement({
 export const DatasetPermissions = builder.simpleObject("DatasetPermissions", {
   fields: (t) => ({
     id: t.id({ nullable: false }),
-    userPermissions: t.field({ type: [PermissionRef] }),
+    userPermissions: t.field({
+      type: [PermissionRef],
+      nullable: { list: true, items: true },
+    }),
   }),
 })

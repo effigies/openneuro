@@ -47,11 +47,17 @@ export const UploadFile = builder.inputType("UploadFile", {
 
 export const SummaryPetInput = builder.inputType("SummaryPetInput", {
   fields: (t) => ({
-    BodyPart: t.stringList(),
-    ScannerManufacturer: t.stringList(),
-    ScannerManufacturersModelName: t.stringList(),
-    TracerName: t.stringList(),
-    TracerRadionuclide: t.stringList(),
+    BodyPart: t.stringList({ required: { list: false, items: false } }),
+    ScannerManufacturer: t.stringList({
+      required: { list: false, items: false },
+    }),
+    ScannerManufacturersModelName: t.stringList({
+      required: { list: false, items: false },
+    }),
+    TracerName: t.stringList({ required: { list: false, items: false } }),
+    TracerRadionuclide: t.stringList({
+      required: { list: false, items: false },
+    }),
   }),
 })
 
@@ -78,13 +84,18 @@ export const SummaryInput = builder.inputType("SummaryInput", {
   fields: (t) => ({
     id: t.id({ required: true }),
     datasetId: t.id({ required: true }),
-    modalities: t.stringList(),
-    secondaryModalities: t.stringList(),
-    dataTypes: t.stringList(),
-    sessions: t.stringList(),
-    subjects: t.stringList(),
-    subjectMetadata: t.field({ type: [SubjectMetadataInput] }),
-    tasks: t.stringList(),
+    modalities: t.stringList({ required: { list: false, items: false } }),
+    secondaryModalities: t.stringList({
+      required: { list: false, items: false },
+    }),
+    dataTypes: t.stringList({ required: { list: false, items: false } }),
+    sessions: t.stringList({ required: { list: false, items: false } }),
+    subjects: t.stringList({ required: { list: false, items: false } }),
+    subjectMetadata: t.field({
+      type: [SubjectMetadataInput],
+      required: { list: false, items: false },
+    }),
+    tasks: t.stringList({ required: { list: false, items: false } }),
     size: t.field({ type: "BigInt", required: true }),
     totalFiles: t.int({ required: true }),
     dataProcessed: t.boolean(),
@@ -121,10 +132,13 @@ export const ValidatorInput = builder.inputType("ValidatorInput", {
   fields: (t) => ({
     id: t.id({ required: true }),
     datasetId: t.id({ required: true }),
-    issues: t.field({ type: [ValidatorIssueInput], required: true }),
+    issues: t.field({
+      type: [ValidatorIssueInput],
+      required: { list: true, items: false },
+    }),
     codeMessages: t.field({
       type: [ValidatorCodeMessageInput],
-      required: true,
+      required: { list: true, items: false },
     }),
     validatorMetadata: t.field({
       type: ValidatorMetadataInput,
@@ -141,7 +155,7 @@ export const MetadataInput = builder.inputType("MetadataInput", {
     firstSnapshotCreatedAt: t.field({ type: "DateTime" }),
     latestSnapshotCreatedAt: t.field({ type: "DateTime" }),
     dxStatus: t.string(),
-    tasksCompleted: t.stringList(),
+    tasksCompleted: t.stringList({ required: { list: false, items: false } }),
     trialCount: t.int(),
     studyDesign: t.string(),
     studyDomain: t.string(),
@@ -151,9 +165,9 @@ export const MetadataInput = builder.inputType("MetadataInput", {
     associatedPaperDOI: t.string(),
     openneuroPaperDOI: t.string(),
     seniorAuthor: t.string(),
-    adminUsers: t.stringList(),
-    ages: t.floatList(),
-    modalities: t.stringList(),
+    adminUsers: t.stringList({ required: { list: false, items: false } }),
+    ages: t.floatList({ required: { list: false, items: false } }),
+    modalities: t.stringList({ required: { list: false, items: false } }),
     grantFunderName: t.string(),
     grantIdentifier: t.string(),
     affirmedDefaced: t.boolean(),
@@ -175,14 +189,14 @@ export const ContributorInput = builder.inputType("ContributorInput", {
 export const AnnexFsckInput = builder.inputType("AnnexFsckInput", {
   fields: (t) => ({
     command: t.string(),
-    errorMessages: t.stringList(),
+    errorMessages: t.stringList({ required: { list: false, items: false } }),
     file: t.string(),
     key: t.string(),
     note: t.string(),
     success: t.boolean(),
-    dead: t.stringList(),
-    missing: t.stringList(),
-    untrusted: t.stringList(),
-    input: t.stringList(),
+    dead: t.stringList({ required: { list: false, items: false } }),
+    missing: t.stringList({ required: { list: false, items: false } }),
+    untrusted: t.stringList({ required: { list: false, items: false } }),
+    input: t.stringList({ required: { list: false, items: false } }),
   }),
 })

@@ -49,6 +49,7 @@ DraftRef.implement({
     }),
     issues: t.field({
       type: [ValidationIssueRef],
+      nullable: { list: true, items: true },
       resolve: (obj, _args, context) =>
         issues(obj, undefined, { userInfo: context.userInfo }),
     }),
@@ -62,6 +63,7 @@ DraftRef.implement({
     }),
     files: t.field({
       type: [DatasetFileRef],
+      nullable: { list: true, items: true },
       args: {
         tree: t.arg.string(),
         recursive: t.arg.boolean(),
@@ -84,6 +86,7 @@ DraftRef.implement({
     }),
     uploads: t.field({
       type: [UploadMetadataRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => obj.uploads as Record<string, unknown>[],
     }),
     head: t.string({
@@ -104,6 +107,7 @@ DraftRef.implement({
     }),
     contributors: t.field({
       type: [ContributorRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => contributors(obj as { id: string }),
     }),
   }),

@@ -4,6 +4,7 @@ import {
   RelatedObjectKind,
   RelatedObjectRelation,
 } from "./enums"
+import { UserRef } from "./refs"
 
 export const RepoMetadata = builder.simpleObject("RepoMetadata", {
   fields: (t) => ({
@@ -19,7 +20,9 @@ export const FlaggedFile = builder.simpleObject("FlaggedFile", {
     filepath: t.string(),
     annexKey: t.string(),
     removed: t.boolean(),
+    remover: t.field({ type: UserRef }),
     flagged: t.boolean(),
+    flagger: t.field({ type: UserRef }),
     createdAt: t.field({ type: "DateTime" }),
   }),
 })
@@ -27,7 +30,7 @@ export const FlaggedFile = builder.simpleObject("FlaggedFile", {
 export const AnnexFsck = builder.simpleObject("AnnexFsck", {
   fields: (t) => ({
     command: t.string(),
-    errorMessages: t.stringList(),
+    errorMessages: t.stringList({ nullable: { list: true, items: true } }),
     file: t.string(),
     key: t.string(),
     note: t.string(),
@@ -85,7 +88,10 @@ export const DatasetCommit = builder.simpleObject("DatasetCommit", {
     authorEmail: t.string(),
     message: t.string(),
     references: t.string(),
-    files: t.field({ type: [DiffFiles] }),
+    files: t.field({
+      type: [DiffFiles],
+      nullable: { list: true, items: true },
+    }),
     filesChanged: t.int(),
     insertions: t.int(),
     deletions: t.int(),

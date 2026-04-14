@@ -63,6 +63,7 @@ SnapshotRef.implement({
     }),
     issues: t.field({
       type: [ValidationIssueRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => snapshotIssues(obj),
     }),
     issuesStatus: t.field({
@@ -76,6 +77,7 @@ SnapshotRef.implement({
     }),
     files: t.field({
       type: [DatasetFileRef],
+      nullable: { list: true, items: true },
       args: {
         tree: t.arg.string(),
         recursive: t.arg.boolean(),
@@ -127,6 +129,7 @@ SnapshotRef.implement({
     }),
     related: t.field({
       type: [RelatedObjectRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => {
         // The related field is set as a thunk by the snapshot query resolver
         if (typeof obj.related === "function") {
@@ -157,6 +160,7 @@ SnapshotRef.implement({
     }),
     contributors: t.field({
       type: [ContributorRef],
+      nullable: { list: true, items: true },
       resolve: (obj) => {
         const datasetId = (obj.datasetId ??
           (obj.id as string)?.split(":")[0]) as string

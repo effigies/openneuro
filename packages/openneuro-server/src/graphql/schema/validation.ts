@@ -29,8 +29,14 @@ export const DatasetValidation = builder.simpleObject("DatasetValidation", {
   fields: (t) => ({
     id: t.string(),
     datasetId: t.string(),
-    issues: t.field({ type: [ValidatorIssue] }),
-    codeMessages: t.field({ type: [ValidatorCodeMessage] }),
+    issues: t.field({
+      type: [ValidatorIssue],
+      nullable: { list: true, items: true },
+    }),
+    codeMessages: t.field({
+      type: [ValidatorCodeMessage],
+      nullable: { list: true, items: true },
+    }),
     errors: t.int(),
     warnings: t.int(),
   }),
@@ -42,7 +48,10 @@ export const ValidationIssue = builder.simpleObject("ValidationIssue", {
     key: t.string({ nullable: false }),
     code: t.int(),
     reason: t.string({ nullable: false }),
-    files: t.field({ type: [ValidationIssueFile] }),
+    files: t.field({
+      type: [ValidationIssueFile],
+      nullable: { list: true, items: true },
+    }),
     additionalFileCount: t.int(),
     helpUrl: t.string(),
   }),
