@@ -4294,12 +4294,16 @@ const RAW_RUNTIME_STATE =
           ["@keyv/redis", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.5.0"],\
           ["@openneuro/search", "workspace:packages/openneuro-search"],\
           ["@openneuro/server", "workspace:packages/openneuro-server"],\
+          ["@pothos/core", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.12.0"],\
+          ["@pothos/plugin-directives", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.3.0"],\
+          ["@pothos/plugin-simple-objects", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.1.3"],\
           ["@sentry/node", "npm:10.37.0"],\
           ["@sentry/profiling-node", "npm:10.37.0"],\
           ["@types/cors", "npm:2.8.13"],\
           ["@types/draft-js", "npm:0.10.45"],\
           ["@types/express", "npm:4.17.17"],\
           ["@types/express-serve-static-core", "npm:4.17.35"],\
+          ["@types/graphql-type-json", "npm:0.3.5"],\
           ["@types/ioredis", "npm:4.27.4"],\
           ["@types/ioredis-mock", "npm:8.2.2"],\
           ["@types/js-yaml", "npm:4.0.9"],\
@@ -4318,6 +4322,7 @@ const RAW_RUNTIME_STATE =
           ["graphql-compose", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.10"],\
           ["graphql-iso-date", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:3.6.1"],\
           ["graphql-tools", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.0"],\
+          ["graphql-type-json", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:0.3.2"],\
           ["hash-wasm", "npm:4.12.0"],\
           ["immutable", "npm:4.3.8"],\
           ["ioredis", "npm:5.6.1"],\
@@ -5270,6 +5275,80 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@pkgjs-parseargs-npm-0.11.0-cd2a3fe948-115e8ceeec.zip/node_modules/@pkgjs/parseargs/",\
         "packageDependencies": [\
           ["@pkgjs/parseargs", "npm:0.11.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@pothos/core", [\
+      ["npm:4.12.0", {\
+        "packageLocation": "./.yarn/cache/@pothos-core-npm-4.12.0-5f0c9dfd03-00824ae8bf.zip/node_modules/@pothos/core/",\
+        "packageDependencies": [\
+          ["@pothos/core", "npm:4.12.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.12.0", {\
+        "packageLocation": "./.yarn/__virtual__/@pothos-core-virtual-1183441d40/0/cache/@pothos-core-npm-4.12.0-5f0c9dfd03-00824ae8bf.zip/node_modules/@pothos/core/",\
+        "packageDependencies": [\
+          ["@pothos/core", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.12.0"],\
+          ["@types/graphql", null],\
+          ["graphql", "npm:16.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/graphql",\
+          "graphql"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@pothos/plugin-directives", [\
+      ["npm:4.3.0", {\
+        "packageLocation": "./.yarn/cache/@pothos-plugin-directives-npm-4.3.0-d0f388d334-d2919ad39a.zip/node_modules/@pothos/plugin-directives/",\
+        "packageDependencies": [\
+          ["@pothos/plugin-directives", "npm:4.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/@pothos-plugin-directives-virtual-66d8caa30d/0/cache/@pothos-plugin-directives-npm-4.3.0-d0f388d334-d2919ad39a.zip/node_modules/@pothos/plugin-directives/",\
+        "packageDependencies": [\
+          ["@pothos/core", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.12.0"],\
+          ["@pothos/plugin-directives", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.3.0"],\
+          ["@types/graphql", null],\
+          ["@types/pothos__core", null],\
+          ["graphql", "npm:16.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@pothos/core",\
+          "@types/graphql",\
+          "@types/pothos__core",\
+          "graphql"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@pothos/plugin-simple-objects", [\
+      ["npm:4.1.3", {\
+        "packageLocation": "./.yarn/cache/@pothos-plugin-simple-objects-npm-4.1.3-39db71358b-5e9a0fc673.zip/node_modules/@pothos/plugin-simple-objects/",\
+        "packageDependencies": [\
+          ["@pothos/plugin-simple-objects", "npm:4.1.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.1.3", {\
+        "packageLocation": "./.yarn/__virtual__/@pothos-plugin-simple-objects-virtual-233bc4dffc/0/cache/@pothos-plugin-simple-objects-npm-4.1.3-39db71358b-5e9a0fc673.zip/node_modules/@pothos/plugin-simple-objects/",\
+        "packageDependencies": [\
+          ["@pothos/core", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.12.0"],\
+          ["@pothos/plugin-simple-objects", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.1.3"],\
+          ["@types/graphql", null],\
+          ["@types/pothos__core", null],\
+          ["graphql", "npm:16.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@pothos/core",\
+          "@types/graphql",\
+          "@types/pothos__core",\
+          "graphql"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6504,6 +6583,16 @@ const RAW_RUNTIME_STATE =
           ["@types/qs", "npm:6.9.7"],\
           ["@types/range-parser", "npm:1.2.4"],\
           ["@types/send", "npm:0.17.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/graphql-type-json", [\
+      ["npm:0.3.5", {\
+        "packageLocation": "./.yarn/cache/@types-graphql-type-json-npm-0.3.5-43e8766da9-765d960bdb.zip/node_modules/@types/graphql-type-json/",\
+        "packageDependencies": [\
+          ["@types/graphql-type-json", "npm:0.3.5"],\
+          ["graphql", "npm:14.7.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13288,6 +13377,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["graphql", [\
+      ["npm:14.7.0", {\
+        "packageLocation": "./.yarn/cache/graphql-npm-14.7.0-5e981fc8a0-34d3924077.zip/node_modules/graphql/",\
+        "packageDependencies": [\
+          ["graphql", "npm:14.7.0"],\
+          ["iterall", "npm:1.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:16.8.1", {\
         "packageLocation": "./.yarn/cache/graphql-npm-16.8.1-c2cd08b4c0-7a09d3ec5f.zip/node_modules/graphql/",\
         "packageDependencies": [\
@@ -13332,7 +13429,7 @@ const RAW_RUNTIME_STATE =
           ["@types/graphql", null],\
           ["graphql", "npm:16.8.1"],\
           ["graphql-compose", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.10"],\
-          ["graphql-type-json", "virtual:c68f2a0b479772113b3427f94bca63cc7602f202a40e153b1cd3d52640b7869549a08451a571b55bdebb8737d0e38e8072b17357cbc48fc71e71fc3743223874#npm:0.3.2"]\
+          ["graphql-type-json", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:0.3.2"]\
         ],\
         "packagePeers": [\
           "@types/graphql",\
@@ -13419,12 +13516,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:c68f2a0b479772113b3427f94bca63cc7602f202a40e153b1cd3d52640b7869549a08451a571b55bdebb8737d0e38e8072b17357cbc48fc71e71fc3743223874#npm:0.3.2", {\
-        "packageLocation": "./.yarn/__virtual__/graphql-type-json-virtual-09edb94b04/0/cache/graphql-type-json-npm-0.3.2-05debc01d8-4162069963.zip/node_modules/graphql-type-json/",\
+      ["virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:0.3.2", {\
+        "packageLocation": "./.yarn/__virtual__/graphql-type-json-virtual-8b549746bb/0/cache/graphql-type-json-npm-0.3.2-05debc01d8-4162069963.zip/node_modules/graphql-type-json/",\
         "packageDependencies": [\
           ["@types/graphql", null],\
           ["graphql", "npm:16.8.1"],\
-          ["graphql-type-json", "virtual:c68f2a0b479772113b3427f94bca63cc7602f202a40e153b1cd3d52640b7869549a08451a571b55bdebb8737d0e38e8072b17357cbc48fc71e71fc3743223874#npm:0.3.2"]\
+          ["graphql-type-json", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:0.3.2"]\
         ],\
         "packagePeers": [\
           "@types/graphql",\
