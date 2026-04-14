@@ -4319,7 +4319,6 @@ const RAW_RUNTIME_STATE =
           ["express", "npm:4.20.0"],\
           ["graphql", "npm:16.8.1"],\
           ["graphql-bigint", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:1.0.0"],\
-          ["graphql-compose", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.10"],\
           ["graphql-iso-date", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:3.6.1"],\
           ["graphql-tools", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.0"],\
           ["graphql-type-json", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:0.3.2"],\
@@ -13407,29 +13406,6 @@ const RAW_RUNTIME_STATE =
           ["@types/graphql", null],\
           ["graphql", "npm:16.8.1"],\
           ["graphql-bigint", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:1.0.0"]\
-        ],\
-        "packagePeers": [\
-          "@types/graphql",\
-          "graphql"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["graphql-compose", [\
-      ["npm:9.0.10", {\
-        "packageLocation": "./.yarn/cache/graphql-compose-npm-9.0.10-a4c0531cb6-afe106b0e0.zip/node_modules/graphql-compose/",\
-        "packageDependencies": [\
-          ["graphql-compose", "npm:9.0.10"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.10", {\
-        "packageLocation": "./.yarn/__virtual__/graphql-compose-virtual-c68f2a0b47/0/cache/graphql-compose-npm-9.0.10-a4c0531cb6-afe106b0e0.zip/node_modules/graphql-compose/",\
-        "packageDependencies": [\
-          ["@types/graphql", null],\
-          ["graphql", "npm:16.8.1"],\
-          ["graphql-compose", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:9.0.10"],\
-          ["graphql-type-json", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:0.3.2"]\
         ],\
         "packagePeers": [\
           "@types/graphql",\

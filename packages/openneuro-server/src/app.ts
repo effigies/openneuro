@@ -10,6 +10,7 @@ import config from "./config"
 import routes from "./routes"
 import morgan from "morgan"
 import schema from "./graphql/schema"
+import type { GraphQLContext } from "./graphql/builder"
 import { ApolloServer } from "@apollo/server"
 import { ApolloServerPluginLandingPageLocalDefault } from "@apollo/server/plugin/landingPage/default"
 import { expressMiddleware } from "@apollo/server/express4"
@@ -25,16 +26,6 @@ import { setupPassportAuth } from "./libs/authentication/passport"
 import { redis } from "./libs/redis"
 import { version } from "./lerna.json"
 export { Express } from "express-serve-static-core"
-
-interface OpenNeuroRequestContext {
-  user: string
-  isSuperUser: boolean
-  userInfo: {
-    id: string
-    exp: string
-    scopes: string[]
-  }
-}
 
 export async function expressApolloSetup() {
   const app = express()
@@ -63,7 +54,7 @@ export async function expressApolloSetup() {
   const httpServer = createServer(app)
 
   // Apollo server setup
-  const apolloServer = new ApolloServer<OpenNeuroRequestContext>({
+  const apolloServer = new ApolloServer<GraphQLContext>({
     schema,
     // Always allow introspection - our schema is public
     introspection: true,
