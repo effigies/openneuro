@@ -4,7 +4,7 @@ import { UserProvider } from "./enums"
 import User from "../../models/user"
 import DatasetEvent from "../../models/datasetEvents"
 import type { UserNotificationStatusDocument } from "../../models/userNotificationStatus"
-import { UserRef, DatasetEventRef } from "./refs"
+import { DatasetEventRef, UserRef } from "./refs"
 
 export { UserRef }
 
