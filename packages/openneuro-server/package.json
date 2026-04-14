@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint src",
     "build": "tsc -b",
-    "start": "nodemon --watch ./dist --enable-source-maps ./dist/server.js"
+    "start": "nodemon --watch ./dist --enable-source-maps ./dist/server.js",
+    "schema:dump": "vitest run scripts/dump-schema.test.ts"
   },
   "repository": {
     "type": "git",
